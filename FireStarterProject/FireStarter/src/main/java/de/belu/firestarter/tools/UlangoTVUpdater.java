@@ -23,7 +23,7 @@ public class UlangoTVUpdater extends Updater {
 
     @Override
     public String getAppName() {
-        return "UlangoTV";
+        return mAppName;
     }
     /** Constructor to get Context */
     public UlangoTVUpdater(String app_name, String package_name)

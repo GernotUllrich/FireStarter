@@ -37,13 +37,7 @@ public class UpdaterAppsAdapter extends BaseAdapter {
     UlangoUpdaterRunnable updateRunnable = null;
     class UlangoUpdaterRunnable implements Runnable {
 
-        private boolean listsDone = false;
-
         Thread t;
-
-        public boolean getListsDone() {
-            return listsDone;
-        }
 
         UlangoUpdaterRunnable() {
             t = new Thread(this);
@@ -59,10 +53,6 @@ public class UpdaterAppsAdapter extends BaseAdapter {
                     String names = iterator.next();
                     String[] separated = names.split("\\|");
                     mUpdaterList.add(new UlangoTVUpdater(separated[0], separated[1]));
-                }
-                synchronized (this) {
-                    listsDone = true;
-                    notifyAll();
                 }
             } catch (Exception e) {
             }
@@ -237,6 +227,7 @@ public class UpdaterAppsAdapter extends BaseAdapter {
                     if (package_name != null) {
                         result.add(app_name + "|" + package_name);
                     }
+                    reader.endObject();
                 }
             }
         } catch (Exception e) {
