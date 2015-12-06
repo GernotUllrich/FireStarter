@@ -8,8 +8,8 @@ android {
         applicationId "tv.ulango.firestarter"
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 121
-        versionName "3.2.1.100"
+        versionCode 122
+        versionName "3.2.2.100"
     }
 
     compileOptions {
